@@ -39,12 +39,11 @@ class LeagueVC: UIViewController {
     func selectLeague(leagueType: String) {
         player.desiredLeague = leagueType
         nextBtn.isEnabled = true
-        nextBtn.backgroundColor = UIColor.gray
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let skillVC = segue.destination as? skillVC {
-
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player
         }
     }
     
