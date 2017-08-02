@@ -123,33 +123,42 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S7h-eb-MgC">
                                 <rect key="frame" x="20" y="155.5" width="335" height="163"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IU-0z-oFe">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IU-0z-oFe" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="41"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.41296553938356162" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                         <state key="normal" title="Mens's League">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="9xS-ms-SEc" eventType="touchUpInside" id="tes-QA-aiN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgS-8u-Lkd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgS-8u-Lkd" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="61" width="335" height="41"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.41296553938356162" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                         <state key="normal" title="Womens's League">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="9xS-ms-SEc" eventType="touchUpInside" id="b6h-1O-e1B"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fO-C7-c1X">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fO-C7-c1X" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="122" width="335" height="41"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.41296553938356162" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
                                         <state key="normal" title="Co-ed League">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoEdTapped:" destination="9xS-ms-SEc" eventType="touchUpInside" id="rcf-bM-wkY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prT-UH-xaz">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prT-UH-xaz" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                 <rect key="frame" x="20" y="607" width="335" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.41245719178082191" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -161,6 +170,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onNextTapped:" destination="9xS-ms-SEc" eventType="touchUpInside" id="99I-nE-m7a"/>
+                                    <segue destination="qLW-BL-Bjf" kind="show" identifier="skillVCSegue" id="qhR-dE-oAa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9t-et-oHI">
@@ -196,7 +206,7 @@
                         <viewLayoutGuide key="safeArea" id="BZx-E8-UZC"/>
                     </view>
                     <connections>
-                        <segue destination="qLW-BL-Bjf" kind="show" identifier="skillVCSegue" id="4C8-nL-X1F"/>
+                        <outlet property="nextBtn" destination="prT-UH-xaz" id="NqS-Id-coS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dt8-rI-nVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,7 +242,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ccJ-MZ-f8Z">
                                 <rect key="frame" x="20" y="209" width="335" height="41"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQn-LI-7vM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQn-LI-7vM" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="157.5" height="41"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
@@ -240,7 +250,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMk-PV-53E">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMk-PV-53E" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                         <rect key="frame" x="177.5" y="0.0" width="157.5" height="41"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
@@ -250,7 +260,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3U-Ws-T6l">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3U-Ws-T6l" customClass="BorderButton" customModule="app_NextUP" customModuleProvider="target">
                                 <rect key="frame" x="20" y="606" width="335" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="21"/>
